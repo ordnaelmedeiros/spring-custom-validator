@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: course
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      org.hibernate.flushMode: COMMIT
+      javax.persistence.validation.group.pre-persist: javax.validation.groups.Default, com.example.restservice.validacao.PrePersist
+      javax.persistence.validation.group.pre-update: javax.validation.groups.Default, com.example.restservice.validacao.PreUpdate
+      javax.persistence.validation.group.pre-remove: com.example.restservice.validacao.PreRemove
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/teste?allowPublicKeyRetrieval=true&sslMode=DISABLED
+    username: teste
+    password: teste
